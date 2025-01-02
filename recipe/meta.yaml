@@ -1,5 +1,6 @@
 {% set name = "freeqdsk" %}
-{% set version = "0.3.1" %}
+{% set version = "0.5.1" %}
+{% set python_min = "3.9" %}
 
 
 package:
@@ -7,8 +8,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/freeqdsk-{{ version }}.tar.gz
-  sha256: 5c8f83b2f93cbf8020879d727dde98c6e8e5fb03a278df8b3a40782e1fffcf21
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/freeqdsk-{{ version }}.tar.gz
+  sha256: 58192ebbd5115b38185b3b23d7c50525d63bf6cdd4531ab967cc05b67d2ed13e
 
 build:
   number: 0
@@ -18,11 +19,13 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
+    - setuptools >=65
+    - setuptools-scm >=8
   run:
+    - python >={{ python_min }}
     - fortranformat ~=2.0
-    - numpy >=1.8
-    - python >=3.8
+    - numpy >=1.22
 
 test:
   imports:
@@ -30,6 +33,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
