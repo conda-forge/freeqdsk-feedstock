@@ -1,6 +1,6 @@
 {% set name = "freeqdsk" %}
 {% set version = "0.5.1" %}
-{% set python_min = "3.8" %}
+{% set python_min = "3.9" %}
 
 
 package:
@@ -25,7 +25,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - fortranformat ~=2.0
-    - numpy >=1.8
+    - numpy >=1.22
 
 test:
   imports:
