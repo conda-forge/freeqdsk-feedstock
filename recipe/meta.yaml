@@ -1,5 +1,6 @@
 {% set name = "freeqdsk" %}
 {% set version = "0.5.1" %}
+{% set python_min = "3.8" %}
 
 
 package:
@@ -18,11 +19,13 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
+    - setuptools >=65
+    - setuptools-scm >=8
   run:
+    - python >={{ python_min }}
     - fortranformat ~=2.0
     - numpy >=1.8
-    - python >=3.8
 
 test:
   imports:
@@ -30,6 +33,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
