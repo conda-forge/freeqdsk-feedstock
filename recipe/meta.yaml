@@ -1,5 +1,5 @@
 {% set name = "freeqdsk" %}
-{% set version = "0.5.1" %}
+{% set version = "0.5.2" %}
 {% set python_min = "3.9" %}
 
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/freeqdsk-{{ version }}.tar.gz
-  sha256: 58192ebbd5115b38185b3b23d7c50525d63bf6cdd4531ab967cc05b67d2ed13e
+  sha256: 7b40430f8368a9ac130d441d43aa50944b4165c8c44fc49b752836bd8e822b4b
 
 build:
   number: 0
